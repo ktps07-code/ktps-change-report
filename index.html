@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#123d35" />
+    <title>關東國小｜改變小記者彙整器</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>.prompt-card{margin-top:26px;background:#fffdf8;border:1px solid #d5e2d7;border-radius:9px;padding:15px 16px;box-shadow:0 6px 15px #173d3510}.prompt-card-head{display:flex;align-items:center;justify-content:space-between;color:#123d35;font-size:12px;font-weight:800;letter-spacing:.05em}.prompt-card-head button{border:0;border-radius:5px;background:#f8e1a8;color:#5a4821;padding:7px 9px;font:700 11px 'Noto Sans TC';cursor:pointer}.prompt-card p{font-size:12px;line-height:1.8;color:#587268;margin:12px 0 0}</style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">K</span><span>關東國小<br /><b>改變小記者</b></span></div>
+        <div class="topbar-note">把每個孩子的觀察，拼成一篇報導</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="eyebrow">CLASSROOM STORY BUILDER · 2026</div>
+          <h1>關東國小的<br /><em>改變</em>，由我們說出來。</h1>
+          <p>請每位小記者填寫六句話，工具會把 6–24 句觀察整理成一個主題與完整的六句報導。</p>
+          <div class="hero-stamp">FIELD<br />NOTES<br /><span>01</span></div>
+        </section>
+
+        <section class="workspace">
+          <div class="input-column">
+            <div class="section-heading">
+              <div><span class="section-number">01</span><h2>收集小記者的句子</h2></div>
+              <div class="people-picker" aria-label="小記者人數">
+                <label for="peopleCount">小記者人數</label>
+                <select id="peopleCount"><option value="2">2 位</option><option value="3">3 位</option><option value="4" selected>4 位</option></select>
+              </div>
+            </div>
+            <div class="tip"><span>✦</span> 每一格填入一位孩子的想法，不用寫得很完美，保留大家不同的觀察。</div>
+            <div id="sentenceCards"></div>
+            <div class="actions"><button class="button secondary" id="sampleBtn">填入範例</button><button class="button ghost" id="clearBtn">清除全部</button><button class="button primary" id="generateBtn">整理成六句報導 <span>→</span></button></div>
+          </div>
+
+          <aside class="report-column">
+            <div class="section-heading report-heading"><div><span class="section-number">02</span><h2>六句報導預覽</h2></div><span class="live-pill"><i></i> LIVE</span></div>
+            <div class="report-paper" id="reportPaper">
+              <div class="paper-top"><span>KTPS / FIELD REPORT</span><span id="reportDate"></span></div>
+              <div class="report-content empty" id="reportContent"><div class="empty-icon">✎</div><h3>你的報導會出現在這裡</h3><p>填寫左側句子後，按下「整理成六句報導」。</p></div>
+            </div>
+            <button class="button copy-button" id="copyBtn" disabled>複製完整報導 <span>↗</span></button>
+            <div class="report-note">小提醒：整理結果是初稿，請小記者一起朗讀、討論，再決定最喜歡的說法。</div>
+          </aside>
+        </section>
+
+        <section class="ai-section">
+          <div class="ai-intro"><div class="ai-label">AI WORKBENCH</div><h2>想讓報導更有故事感？</h2><p>把整理好的內容交給 ChatEverywhere，請它協助潤飾、找出更精準的主題，或用小朋友的語氣改寫。</p><a href="https://chateverywhere.app/zh" target="_blank" rel="noopener noreferrer" class="text-link">另開 ChatEverywhere ↗</a><div class="prompt-card"><div class="prompt-card-head"><span>建議提示詞</span><button id="copyPromptBtn" type="button">複製提示詞</button></div><p id="promptText">將以下的文章內容，幫我彙整成一篇六句話的校園報導，有關關東國小最大的改變。請保留孩子們觀察到的重點，使用簡單、清楚、適合小學生朗讀的語氣。文章內容如下：<br /><br />【請在這裡貼上文章內容】</p></div></div>
+          <div class="chat-frame-wrap"><iframe title="ChatEverywhere" src="https://chateverywhere.app/zh" loading="lazy" allow="clipboard-write"></iframe><div class="frame-fallback">如果網頁無法嵌入，請使用上方「另開 ChatEverywhere」連結。</div></div>
+        </section>
+      </main>
+      <footer>關東國小 × 小小公民記者 <span>讓改變被看見</span></footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
